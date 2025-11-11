@@ -4,15 +4,24 @@ import { UploadThingError } from "uploadthing/server";
 
 const f = createUploadthing();
 
-const handleAuth = () => {
-    const  userId  = auth();
-    console.log(userId);
+// const handleAuth = () => {
+//     const  userId  = auth();
+//     console.log(userId);
     
-    if (!userId) throw new Error("Unauthorized");
-    return { userId: userId };
-}
+//     if (!userId) throw new Error("Unauthorized");
+//     return { userId: userId };
+// }
 
+const handleAuth = async () => {  // <- make function async
+    const authData = await auth();       // <- await the promise
+    console.log(authData);
 
+    if (!authData || !authData.userId) {
+        throw new Error("Unauthorized");
+    }
+
+    return { userId: authData.userId };  // <- return the string userId
+};
 
 
 

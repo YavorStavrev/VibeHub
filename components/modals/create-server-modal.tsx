@@ -25,7 +25,7 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { useRouter } from "next/navigation";
 import { useModal } from "@/hooks/use-modal-store";
-// import { FileUpload } from "../file-upload";
+
 
 import dynamic from "next/dynamic";
 const FileUpload = dynamic(
@@ -61,26 +61,10 @@ export const CreateServerModal = () => {
 
   const isLoading = form.formState.isSubmitting;
 
-  // const onSubmit = async (values: z.infer<typeof formSchema>) => {
-
-  //   try {
-  //     await axios.post("/api/servers", values);
-
-  //     form.reset();
-  //     router.refresh();
-  //   } catch (error) {
-  //     console.log(error);
-
-  //   }
-
-  // }
-
-  // ...existing code...
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    try {
 
+    try {
       await axios.post("/api/servers", values);
-      // close modal and reset local form state before refreshing the page
 
       form.reset();
       router.refresh();
@@ -88,9 +72,10 @@ export const CreateServerModal = () => {
       window.location.reload();
     } catch (error) {
       console.log(error);
+
     }
+
   }
-  // ...existing code...
 
   const handleClose = () => {
     form.reset();

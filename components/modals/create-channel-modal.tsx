@@ -81,7 +81,7 @@ export const CreateChannelModal = () => {
                         <div className="space-y-8 px-6">
                             <FormField control={form.control}
                                 name="name"
-                                render={({ field }) => (
+                                render={({ field }: {field: any}) => (
                                     <FormItem>
                                         <FormLabel className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70">
                                             Channel Name
@@ -97,40 +97,40 @@ export const CreateChannelModal = () => {
                                         <FormMessage />
                                     </FormItem>
                                 )} />
-                                <FormField 
-                                    control={form.control}
-                                    name="type"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Channel Type</FormLabel>
-                                            <Select
-                                                disabled={isLoading}
-                                                onValueChange={field.onChange}
-                                                defaultValue={field.value}
-                                            >
-                                                <FormControl>
-                                                    <SelectTrigger
-                                                        className="bg-zinc-300/50 border-0 focus:ring-0 text-black ring-offset-0 focus:ring-offset-0 capitalize outline-none"
+                            <FormField
+                                control={form.control}
+                                name="type"
+                                render={({ field }: {field: any}) => (
+                                    <FormItem>
+                                        <FormLabel>Channel Type</FormLabel>
+                                        <Select
+                                            disabled={isLoading}
+                                            onValueChange={field.onChange}
+                                            defaultValue={field.value}
+                                        >
+                                            <FormControl>
+                                                <SelectTrigger
+                                                    className="bg-zinc-300/50 border-0 focus:ring-0 text-black ring-offset-0 focus:ring-offset-0 capitalize outline-none"
+                                                >
+                                                    <SelectValue placeholder="Select a channel type" />
+                                                </SelectTrigger>
+                                            </FormControl>
+                                            <SelectContent>
+                                                {Object.values(ChannelType).map((type) => (
+                                                    <SelectItem
+                                                        key={type}
+                                                        value={type}
+                                                        className="capitalize"
                                                     >
-                                                        <SelectValue placeholder="Select a channel type" />
-                                                    </SelectTrigger>
-                                                </FormControl>
-                                                <SelectContent>
-                                                    {Object.values(ChannelType).map((type) => (
-                                                        <SelectItem
-                                                            key={type}
-                                                            value={type}
-                                                            className="capitalize"
-                                                        >
-                                                            {type.toLowerCase()}
-                                                        </SelectItem>
-                                                    ))}
-                                                </SelectContent>
-                                            </Select>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
+                                                        {type.toLowerCase()}
+                                                    </SelectItem>
+                                                ))}
+                                            </SelectContent>
+                                        </Select>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
                         </div>
                         <DialogFooter className="bg-gray-100 px-6 py-4">
                             <Button disabled={isLoading} variant="primary">

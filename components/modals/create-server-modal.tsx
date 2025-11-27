@@ -69,7 +69,7 @@ export const CreateServerModal = () => {
                                 <FormField
                                     control={form.control}
                                     name="imageUrl"
-                                    render={({ field }) => (
+                                    render={({ field }: {field: any}) => (
                                         <FormItem>
                                             <FormControl>
                                                 <FileUpload
@@ -83,7 +83,7 @@ export const CreateServerModal = () => {
                             </div>
                             <FormField control={form.control}
                                 name="name"
-                                render={({ field }) => (
+                                render={({ field }: {field: any}) => (
                                     <FormItem>
                                         <FormLabel className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70">
                                             Server Name

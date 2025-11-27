@@ -1,5 +1,9 @@
 "use client";
+<<<<<<< HEAD
 import "@uploadthing/react/styles.css";
+=======
+// import "@uploadthing/react/styles.css";
+>>>>>>> main
 import { X } from "lucide-react";
 import Image from "next/image";
 
@@ -35,6 +39,7 @@ export const FileUpload = ({
                     <X className="h-4 w-4" />
                 </button>
             </div>
+<<<<<<< HEAD
         )
     }
 
@@ -43,6 +48,18 @@ export const FileUpload = ({
             endpoint={endpoint}
             onClientUploadComplete={(res) => {
                 onChange(res?.[0].url);
+=======
+        );
+    }
+
+    return (
+        <UploadDropzone
+            className="border-2 border-green-950 bg-green-400 ut-label:text-lg ut-allowed-content:ut-uploading:text-red-300"
+            endpoint={endpoint}
+            onClientUploadComplete={(res) => {
+                // onChange(res?.[0].url);
+                onChange(res?.[0].ufsUrl);
+>>>>>>> main
             }}
             onUploadError={(error: Error) => {
                 console.log(error);
@@ -51,7 +68,11 @@ export const FileUpload = ({
         />
 
     )
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> main
 
 }
 

@@ -19,12 +19,8 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
-<<<<<<< HEAD
-        primary: "bg-indigo-500 text-white hover:bg-indigo-500/90"
-=======
         //test: "bg-red-300"
         primary: "bg-indigo-500 text-white hover:bg-indigo-500/90",
->>>>>>> main
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
@@ -55,11 +51,7 @@ function Button({
   const Comp = asChild ? Slot : "button"
 
   return (
-<<<<<<< HEAD
-    <Comp
-=======
     <Comp suppressHydrationWarning
->>>>>>> main
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}

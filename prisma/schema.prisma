@@ -1,24 +1,3 @@
-<<<<<<< HEAD
-generator client {
-  provider = "prisma-client-js"
-}
-
-datasource db {
-  provider = "mysql"
-  url = env("DATABASE_URL")
-  relationMode = "prisma"
-}
-
-model Profile {
-  id String @id @default(uuid())
-  userId String @unique
-  name String
-  imageUrl String @db.Text
-  email String @db.Text
-
-  servers Server[]
-  members Member[]
-=======
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
@@ -44,7 +23,6 @@ model Profile {
 
   servers  Server[]
   members  Member[]
->>>>>>> main
   channels Channel[]
 
   createdAt DateTime @default(now())
@@ -52,20 +30,6 @@ model Profile {
 }
 
 model Server {
-<<<<<<< HEAD
-  id String @id @default(uuid())
-  name String
-  imageUrl String @db.Text
-  inviteCode String @unique
-
-  profileId String 
-  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
-
-  members Member[]
-  channels Channel[]
-
-
-=======
   id         String @id @default(uuid())
   name       String
   imageUrl   String @db.Text
@@ -77,7 +41,6 @@ model Server {
   members  Member[]
   channels Channel[]
 
->>>>>>> main
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -91,16 +54,6 @@ enum MemberRole {
 }
 
 model Member {
-<<<<<<< HEAD
-  id String @id @default(uuid())
-  role MemberRole @default(GUEST)
-
-  profileId String
-  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
-
-  serverId String
-  server Server @relation(fields: [serverId], references: [id], onDelete: Cascade)
-=======
   id   String     @id @default(uuid())
   role MemberRole @default(GUEST)
 
@@ -109,7 +62,6 @@ model Member {
 
   serverId String
   server   Server @relation(fields: [serverId], references: [id], onDelete: Cascade)
->>>>>>> main
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -125,34 +77,19 @@ enum ChannelType {
 }
 
 model Channel {
-<<<<<<< HEAD
-  id String @id @default(uuid())
-=======
   id   String      @id @default(uuid())
->>>>>>> main
   name String
   type ChannelType @default(TEXT)
 
   profileId String
-<<<<<<< HEAD
-  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
-
-  serverId String
-  server Server @relation(fields: [serverId], references: [id], onDelete: Cascade)
-=======
   profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
 
   serverId String
   server   Server @relation(fields: [serverId], references: [id], onDelete: Cascade)
->>>>>>> main
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([profileId])
   @@index([serverId])
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> main

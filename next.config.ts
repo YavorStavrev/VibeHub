@@ -1,31 +1,23 @@
-<<<<<<< HEAD
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-    images: {
-      domains: [
-        "utfs.io"
-      ]
-    },
-=======
 // import type { NextConfig } from "next";
 
 // const nextConfig: NextConfig = {
-//     images: {
-//       domains: [
-//         "utfs.io"
-//       ]
-//     },
 //   /* config options here */
-//   reactCompiler: true,
+//   images: {
+//     domains: [
+//         "utfs.io"
+//       ],
+//     remotePatterns: [
+//       {
+        
+//         protocol: 'https',
+//         hostname: 'f7f948mkor.ufs.sh',
+//         pathname: '**',
+//       },
+//     ],
+//   },
 // };
 
 // export default nextConfig;
-
-
-
-
-
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -41,17 +33,8 @@ const nextConfig: NextConfig = {
     ],
   },
 
->>>>>>> main
   /* config options here */
   reactCompiler: true,
 };
 
 export default nextConfig;
-<<<<<<< HEAD
-
-
-
-
-
-=======
->>>>>>> main

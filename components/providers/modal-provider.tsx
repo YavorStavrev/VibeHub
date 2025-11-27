@@ -1,36 +1,3 @@
-<<<<<<< HEAD
-"use client";
-
-import { useEffect, useState } from "react";
-import { CreateServerModal } from "@/components/modals/create-server-modal";
-import { InviteModal } from "@/components/modals/invite-modal";
-
-export const ModalProvider = () => {
-=======
-// "use client";
-
-// import { useEffect, useState } from "react";
-// import { CreateServerModal } from "@/components/modals/create-server-modal";
-// import { InviteModal } from "@/components/modals/invite-modal";
-
-// export const ModalProvider = () => {
-//     const [isMounted, setIsMounted] = useState(false);
-
-//     useEffect(() => {
-//         setIsMounted(true);
-//     }, []);
-
-//     if (!isMounted) {
-//         return null;
-//     }
-
-//     return (
-//         <>
-//             <CreateServerModal />
-//             <InviteModal />
-//         </>
-//     )
-// }
 "use client"
 
 import { useEffect, useState } from "react";
@@ -42,31 +9,21 @@ import { CreateChannelModal } from "../modals/create-channel-modal";
 
 export const ModalProvider = () => {
 
->>>>>>> main
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
         setIsMounted(true);
     }, []);
 
-<<<<<<< HEAD
-    if (!isMounted) {
-        return null;
-    }
-=======
     if (!isMounted) return null;
->>>>>>> main
 
     return (
         <>
             <CreateServerModal />
             <InviteModal />
-<<<<<<< HEAD
-=======
             <EditServerModal />
             <MembersModal/>
             <CreateChannelModal/>
->>>>>>> main
         </>
     )
 }
